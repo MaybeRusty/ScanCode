@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button bindtap="scanCode"> 扫一扫 </button>
+  </view>
+  <view class="fadeIn" wx:if="{{isInvalid}}">
+    <view class="weui-mask"></view>
+    <view class="weui-dialog">
+      <view class="icon-box">
+        <i class="weui-icon-success weui-icon_msg"></i>
+        <view class="icon-box__ctn">
+          <h3 class="icon-box__title">成功</h3>
+        </view>
+      </view>
+      <view class="weui-dialog__bd">{{verifyMessage}}</view>
+      <view class="weui-dialog__ft">
+          <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="messageClose">知道了</a>
+      </view>
+    </view>
+  </view>
+  <view class="fadeIn" wx:if="{{isUninvalid}}">
+    <view class="weui-mask"></view>
+    <view class="weui-dialog">
+      <view class="icon-box">
+        <i class="weui-icon-warn weui-icon_msg"></i>
+        <view class="icon-box__ctn">
+          <h3 class="icon-box__title">失败</h3>
+        </view>
+		  </view>
+      <view class="weui-dialog__bd">{{verifyMessage}}</view>
+      <view class="weui-dialog__ft">
+          <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="messageClose">知道了</a>
+      </view>
+    </view>
+  </view>
+</view>

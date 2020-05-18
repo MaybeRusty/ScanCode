@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/scancode/scancode",
+    "pages/statistics/statistics",
+    "pages/personal/personal",
+    "pages/login/login",
+    "pages/statisticsItem/statisticsItem"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#1296db",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/ticketInfo.png",
+        "iconPath": "images/ticketInfoBase.png",
+        "pagePath": "pages/statistics/statistics",
+        "text": "票务"
+      },
+      {
+        "selectedIconPath": "images/ticketScan.png",
+        "iconPath": "images/ticketScanBase.png",
+        "pagePath": "pages/scancode/scancode",
+        "text": "扫码"
+      },
+      {
+        "selectedIconPath": "images/userInfo.png",
+        "iconPath": "images/userInfoBase.png",
+        "pagePath": "pages/personal/personal",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "kbone": false,
+    "weui": true
+  }
+}
