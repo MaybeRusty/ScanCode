@@ -7,14 +7,20 @@ Page({
     orders: [
       {item_title: "test1", item_msg: ""},
       {item_title: "test2", item_msg: ""},
-      {item_title: "test3", item_msg: ""},
-      {item_title: "test4", item_msg: ""},
-      {item_title: "test5", item_msg: ""},
-      {item_title: "test6", item_msg: ""}
+      {item_title: "test3", item_value: 0, item_msg: ""},
+      {item_title: "test4", item_value: 0, item_msg: ""},
+      {item_title: "test5", item_value: 0, item_msg: ""},
+      {item_title: "test6", item_value: 0, item_msg: ""}
     ],
+    item: {
+      item_title: "just_test",
+      item_value: 0,
+      item_msg: ""
+    },
     refresh_top_hidden: true,
     refresh_buttom_hidden: true,
-    load_more: true
+    load_more: true,
+    add_item: false
   },
   onLoad: function () {
     if (!app.globalData.loginStatus) {
@@ -57,5 +63,21 @@ Page({
           refresh_buttom_hidden: true
         })
       }, 1000)
+  },
+  placeOrder: function() {
+    var that = this
+    that.setData({
+      add_item: true
+    })
+  },
+  add_item_close: function() {
+    var that = this
+    var cur_orders = that.data.orders
+    cur_orders.splice(5, 1)
+    cur_orders.push(that.data.item)
+    that.setData({
+      orders: cur_orders,
+      add_item: false
+    })
   }
 })

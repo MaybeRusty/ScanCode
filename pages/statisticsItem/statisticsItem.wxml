@@ -3,6 +3,10 @@
 		<view class="weui-form-preview">
 			<view class="weui-form-preview__hd">
 				<view class="weui-form-preview__item">
+					<view class="icon-box">
+						<i class="weui-icon-success weui-icon_msg" wx:if="{{order.status}}"></i>
+						<i class="weui-icon-warn weui-icon_msg-primary" wx:if="{{!order.status}}"></i>
+					</view>
 					<label class="weui-form-preview__label">付款金额</label>
 					<em class="weui-form-preview__value">¥{{order.AmountOfMoney}}</em>
 				</view>
@@ -21,8 +25,11 @@
 					<text class="weui-form-preview__value">{{order.Number}}</text>
 				</view>
 			</view>
-			<view class="weui-form-preview__ft">
-				<a class="weui-form-preview__btn weui-form-preview__btn_primary">操作</a>
+			<view class="weui-form-preview__ft" wx:if="{{!order.status}}">
+				<a class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap="pay_money">支付</a>
+			</view>
+			<view class="weui-form-preview__ft" wx:else>
+				<a class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap="pay_return">返回</a>
 			</view>
 		</view>
 	</view>

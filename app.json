@@ -4,7 +4,8 @@
     "pages/statistics/statistics",
     "pages/personal/personal",
     "pages/login/login",
-    "pages/statisticsItem/statisticsItem"
+    "pages/statisticsItem/statisticsItem",
+    "pages/orders/orders"
   ],
   "window":{
     "backgroundTextStyle":"light",

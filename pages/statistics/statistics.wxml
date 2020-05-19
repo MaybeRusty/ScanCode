@@ -1,7 +1,7 @@
-<!--logs.wxml-->
 <view  type="height:100%" class="page">
   <view class="page__bd">
     <view class="weui-cells__title">票务信息</view>
+    <!--加载上一页-->
     <view class="hot-box-top" hidden="{{refresh_top_hidden}}">
       <view wx:if="{{load_more}}">
          <view class="weui-loadmore">
@@ -13,12 +13,14 @@
          <text> 没有更多了 </text>
       </view>
     </view>
+    <!--数据块-->
     <block wx:for="{{orders}}" wx:for-item="order">
       <navigator url="../../pages/statisticsItem/statisticsItem?id='1'" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
           <view class="weui-cell__bd">{{order.item_title}}</view>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </navigator>
     </block>
+    <!--加载下一页-->
     <view class="hot-box-more"  hidden="{{refresh_buttom_hidden}}">
       <view wx:if="{{load_more}}">
          <view class="weui-loadmore">
@@ -30,8 +32,35 @@
          <text> 没有更多了 </text>
       </view>
     </view>
-    <a class="weui-btn_cell weui-btn_cell-default weui-btn_primary" style='bottom:0'>
+    <a class="weui-btn_cell weui-btn_cell-default weui-btn_primary" style='bottom:0' bindtap="placeOrder">
       <image class="weui-btn_cell__icon" src="../../images/add.png"></image>
     </a>
+    <!--购买票务-->
+    <view class="fadeIn" wx:if="{{add_item}}">
+        <view class="weui-mask"></view>
+        <view class="weui-dialog">
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_active">
+                  <view class="icon-box">
+                    <i class="weui-icon-waiting weui-icon_msg"></i>
+                  </view>
+                  <view class="page__hd">
+                    <view class="page__desc">票务单价:  0.01元/个</view>
+                  </view>
+              </view>
+              <view class="weui-cell weui-cell_vcode">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">订购门票</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" value="{{item.item_value}}" placeholder="请输入数量" />
+                </view>
+              </view>
+            </view>
+            <view class="weui-dialog__ft">
+                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="add_item_close">添加</a>
+            </view>
+        </view>
+    </view>
   </view>
 </view>

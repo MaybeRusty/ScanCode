@@ -9,24 +9,18 @@
 					<view>我的信息</view>
 				</view>
 			</view>
-			<view class="weui-cell weui-cell_active weui-cell_access">
-				<view class="weui-cell__bd">
-					<text style="vertical-align: middle;">订单信息</text>
-				</view>
-				<view class="weui-cell__ft"></view>
-			</view>
-			<view class="weui-cell weui-cell_active weui-cell_access">
-				<view class="weui-cell__bd">
-					<text style="vertical-align: middle;">票务统计</text>
-				</view>
-				<view class="weui-cell__ft"></view>
-			</view>
-			<view class="weui-cell weui-cell_active weui-cell_access">
-				<view class="weui-cell__bd">
-					<text style="vertical-align: middle;">已售信息</text>
-				</view>
-				<view class="weui-cell__ft"></view>
-			</view>
+			<navigator url="../../pages/statisticsItem/statisticsItem?id='1'" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+					<view class="weui-cell__bd">已售机构消费图</view>
+					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+			</navigator>
+			<navigator url="../../pages/statisticsItem/statisticsItem?id='1'" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+					<view class="weui-cell__bd">各机构占比图</view>
+					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+			</navigator>
+			<navigator url="../../pages/statisticsItem/statisticsItem?id='1'" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+					<view class="weui-cell__bd">机构票务管理</view>
+					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+			</navigator>
 		</view>
 	</view>
 </view>
