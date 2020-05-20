@@ -5,7 +5,8 @@
     "pages/personal/personal",
     "pages/login/login",
     "pages/statisticsItem/statisticsItem",
-    "pages/orders/orders"
+    "pages/orders/orders",
+    "pages/sold_tickets/sold_tickets"
   ],
   "window":{
     "backgroundTextStyle":"light",

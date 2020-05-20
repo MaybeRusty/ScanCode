@@ -27,6 +27,7 @@
 			</view>
 			<view class="weui-form-preview__ft" wx:if="{{!order.status}}">
 				<a class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap="pay_money">支付</a>
+				<a class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap="order_delete">删除</a>
 			</view>
 			<view class="weui-form-preview__ft" wx:else>
 				<a class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap="pay_return">返回</a>

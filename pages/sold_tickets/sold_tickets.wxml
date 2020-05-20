@@ -1,0 +1,3 @@
+<view class="page">
+  <ec-canvas id="1" canvas-id="2" ec="{{ ec }}"></ec-canvas>
+</view>

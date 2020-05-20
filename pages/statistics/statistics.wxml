@@ -58,7 +58,8 @@
               </view>
             </view>
             <view class="weui-dialog__ft">
-                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="add_item_close">添加</a>
+                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="add_item_handle">订购</a>
+                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="add_item_close">取消</a>
             </view>
         </view>
     </view>

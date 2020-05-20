@@ -9,15 +9,15 @@
 					<view>我的信息</view>
 				</view>
 			</view>
-			<navigator url="../../pages/statisticsItem/statisticsItem?id='1'" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+			<navigator url="../../pages/sold_tickets/sold_tickets?id='1'" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
 					<view class="weui-cell__bd">已售机构消费图</view>
 					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
 			</navigator>
-			<navigator url="../../pages/statisticsItem/statisticsItem?id='1'" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+			<navigator url="../../pages/sold_tickets/sold_tickets?id='1'" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
 					<view class="weui-cell__bd">各机构占比图</view>
 					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
 			</navigator>
-			<navigator url="../../pages/statisticsItem/statisticsItem?id='1'" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+			<navigator url="../../pages/sold_tickets/sold_tickets?id='1'" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
 					<view class="weui-cell__bd">机构票务管理</view>
 					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
 			</navigator>

@@ -70,13 +70,18 @@ Page({
       add_item: true
     })
   },
-  add_item_close: function() {
+  add_item_handle: function() {
     var that = this
     var cur_orders = that.data.orders
     cur_orders.splice(5, 1)
     cur_orders.push(that.data.item)
     that.setData({
       orders: cur_orders,
+      add_item: false
+    })
+  },
+  add_item_close: function() {
+    this.setData({
       add_item: false
     })
   }

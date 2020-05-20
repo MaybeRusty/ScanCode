@@ -23,6 +23,11 @@ Page({
       order: cur_order
     })
   },
+  order_delete: function() {
+    wx.navigateBack({
+      delta: 1
+    })
+  },
   pay_return: function() {
     wx.navigateBack({
       delta: 1
