@@ -6,7 +6,9 @@
     "pages/login/login",
     "pages/statisticsItem/statisticsItem",
     "pages/orders/orders",
-    "pages/sold_tickets/sold_tickets"
+    "pages/sold_tickets/sold_tickets",
+    "pages/organ_manager/organ_manager",
+    "pages/sold_statistics/sold_statistics"
   ],
   "window":{
     "backgroundTextStyle":"light",
