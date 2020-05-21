@@ -17,10 +17,11 @@
 					<view class="weui-cell__bd">各机构占比图</view>
 					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
 			</navigator>
-			<navigator url="../../pages/organ_manager/organ_manager" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-					<view class="weui-cell__bd">机构票务管理</view>
+			<a class="weui-btn_cell weui-btn_cell-default weui-btn_primary" bindtap="logout">退出</a>
+			<!-- <navigator url="../../pages/organ_manager/organ_manager" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+					<view class="weui-cell__bd">账号退出</view>
 					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
-			</navigator>
+			</navigator> -->
 		</view>
 	</view>
 </view>

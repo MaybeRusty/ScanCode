@@ -1,6 +1,14 @@
 <view  type="height:100%" class="page">
   <view class="page__bd">
-    <view class="weui-cells__title">票务信息</view>
+    <!-- <view class="weui-tab">
+      <view class="weui-navbar"> -->
+        <a class="weui-btn_cell weui-btn_cell-default weui-btn_primary" bindtap="placeOrder">
+          <view class="weui-cells__title">票务信息</view>
+          <image class="weui-btn_cell__icon" src="../../images/add.png"></image>
+        </a>
+      <!-- </view>
+    </view> -->
+  </view>
     <!--加载上一页-->
     <view class="hot-box-top" hidden="{{refresh_top_hidden}}">
       <view wx:if="{{load_more}}">
@@ -17,6 +25,8 @@
     <block wx:for="{{orders}}" wx:for-item="order">
       <navigator url="../../pages/statisticsItem/statisticsItem?id='1'" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
           <view class="weui-cell__bd">{{order.item_title}}</view>
+          <i class="weui-icon-success weui-icon_msg_min" wx:if="{{order.item_status}}"></i>
+          <i class="weui-icon-waiting weui-icon_msg_min" wx:if="{{!order.item_status}}"></i>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </navigator>
     </block>
@@ -32,9 +42,6 @@
          <text> 没有更多了 </text>
       </view>
     </view>
-    <a class="weui-btn_cell weui-btn_cell-default weui-btn_primary" style='bottom:0' bindtap="placeOrder">
-      <image class="weui-btn_cell__icon" src="../../images/add.png"></image>
-    </a>
     <!--购买票务-->
     <view class="fadeIn" wx:if="{{add_item}}">
         <view class="weui-mask"></view>
@@ -63,5 +70,4 @@
             </view>
         </view>
     </view>
-  </view>
 </view>

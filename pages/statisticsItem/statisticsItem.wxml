@@ -5,9 +5,10 @@
 				<view class="weui-form-preview__item">
 					<view class="icon-box">
 						<i class="weui-icon-success weui-icon_msg" wx:if="{{order.status}}"></i>
-						<i class="weui-icon-warn weui-icon_msg-primary" wx:if="{{!order.status}}"></i>
+						<i class="weui-icon-waiting weui-icon_msg" wx:if="{{!order.status}}"></i>
 					</view>
-					<label class="weui-form-preview__label">付款金额</label>
+					<label class="weui-form-preview__label" wx:if="{{order.status}}">已付金额</label>
+					<label class="weui-form-preview__label" wx:if="{{!order.status}}">待付金额</label>
 					<em class="weui-form-preview__value">¥{{order.AmountOfMoney}}</em>
 				</view>
 			</view>

@@ -5,12 +5,23 @@ const app = getApp()
 Page({
   data: {
     orders: [
-      {item_title: "test1", item_msg: ""},
-      {item_title: "test2", item_msg: ""},
-      {item_title: "test3", item_value: 0, item_msg: ""},
-      {item_title: "test4", item_value: 0, item_msg: ""},
-      {item_title: "test5", item_value: 0, item_msg: ""},
-      {item_title: "test6", item_value: 0, item_msg: ""}
+      {"item_title": "test1", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test2", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test3", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test4", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test5", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test6", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test7", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test8", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test9", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test10", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test11", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test12", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test13", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test14", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test15", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test16", "item_value": 0, "item_msg": "", "item_status": false},
+      {"item_title": "test17", "item_value": 0, "item_msg": "", "item_status": false}
     ],
     item: {
       item_title: "just_test",
