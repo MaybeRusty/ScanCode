@@ -23,6 +23,7 @@ Page({
         err_msg: ""
       }
     },
+    //设置校验码
     SetVerifyCode : function(e) {
       var verify_check = this.data.verify_check
       if (e.detail.value == "") {
@@ -36,6 +37,7 @@ Page({
       this.data.metadata.verify = e.detail.value
       console.log(this.data.metadata.verify)
     },
+    //设置手机号码，并校验
     SetPhoneNum: function(e) {
       var phone_check = this.data.phone_check
       var verify_check = this.data.verify_check
@@ -57,6 +59,7 @@ Page({
         toast_ctrl: toast_ctrl
       })
     },
+    //手机号码输入重置
     phone_reset: function() {
       var metadata = this.data.metadata
       var phone_check = this.data.phone_check
@@ -67,15 +70,18 @@ Page({
         phone_check: phone_check
       })
     },
+    //提交数据并切换到主页
     submitData: function(e) {
       app.globalData.loginStatus = true
       wx.switchTab({
         url: "../scancode/scancode"
       })
     },
+    //验证码发送回调
     verify_code_send: function() {
       this.getCode()
     },
+    //验证码动画
     getCode: function (options){
       var that = this;
       var verify_check = that.data.verify_check
