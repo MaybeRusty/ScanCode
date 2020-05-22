@@ -9,12 +9,12 @@
             <view class="weui-cell weui-cell_active">
               <view class="weui-cell__hd"><label class="weui-label">手机号</label></view>
               <view class="weui-cell__bd">
-                <input name="phone_num" class="weui-input" type="number" placeholder="请输入手机号"  placeholder-class="weui-input__placeholder"  bindblur="SetPhoneNum"/>
+                <input name="phone_num" class="weui-input" type="number" placeholder="请输入手机号"  value="{{metadata.phone}}" placeholder-class="weui-input__placeholder"  bindblur="SetPhoneNum"/>
               </view>
               <view class="weui-cell__ft">
-                <a class="weui-btn_reset weui-btn_icon">
-                  <i class="weui-icon-info-circle" wx:if="{{}}"></i>
-                  <i class="weui-icon-info weui-icon_msg_min" wx:elif="{{}}"></i>
+                <a class="weui-btn_reset weui-btn_icon" bindtap="{{phone_check.phone_verify != 2 ? 'phone_reset' : ''}}">
+                  <i class="weui-icon-info-circle" wx:if="{{phone_check.phone_verify == 0}}"></i>
+                  <i class="weui-icon-info weui-icon_msg_min" wx:elif="{{phone_check.phone_verify == 1}}"></i>
                   <i class="weui-icon-success weui-icon_msg_min" wx:else></i>
                 </a>
               </view>
@@ -25,7 +25,7 @@
                 <input name="verify_code" class="weui-input" type="text" placeholder="输入验证码" placeholder-class="weui-input__placeholder" bindblur="SetVerifyCode"/>
               </view>
               <view class="weui-cell__ft">
-                <a class="weui-btn weui-btn_default weui-vcode-btn" bindtap="verify_code_send">{{time_text}}</a>
+                <a class="weui-btn weui-btn_mini weui-btn_primary {{ !verify_check.can_send || phone_check.phone_verify != 2 ? 'weui-btn_disabled' : ''}} " bindtap="verify_code_send">{{verify_check.time_text}}</a>
               </view>
             </view>
           </view>
@@ -34,7 +34,7 @@
           </view>
         </view>
       </view>
-      <view class="weui-form__tips-area">
+      <!-- <view class="weui-form__tips-area">
         <label class="weui-agree">
           <checkbox-group bindchange="checkboxChange">
             <checkbox class="weui-agree__checkbox-check" value="true"/>
@@ -42,9 +42,17 @@
             <span class="weui-agree__text">阅读并同意<a>《相关条款》</a></span>
           </checkbox-group>
         </label>
-      </view>
+      </view> -->
       <view class="weui-form__opr-area">
-        <a class="weui-btn weui-btn_primary {{!canSubmit ? 'weui-btn_disabled' : ''}}"  bindtap="{{canSubmit ? 'submitData' : ''}}">确定</a>
+        <a class="weui-btn {{!(phone_check.phone_verify == 2 && verify_check.verify_set) ? 'weui-btn_disabled' : 'weui-btn_primary'}}"  bindtap="{{phone_check.phone_verify == 2 && verify_check.verify_set ? 'submitData' : ''}}">确定</a>
       </view>
     </view>
+    <view class="fadeIn" wx:if="{{toast_ctrl.enable}}">
+      <view class="weui-mask_transparent"></view>
+      <view class="weui-toast">
+        <i class="weui-icon-success-no-circle weui-icon_toast" wx:if="{{toast_ctrl.succ}}"></i>
+        <i class="weui-icon-warn weui-icon_toast" wx:else></i>
+        <view class="weui-toast__content">{{toast_ctrl.err_msg}}</view>
+      </view>
+	  </view>
   </view>

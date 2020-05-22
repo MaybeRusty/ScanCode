@@ -14,6 +14,14 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const phoneVerify = phone => { 
+  if(!(/^1[3456789]\d{9}$/.test(phone))){ 
+      return false; 
+  } 
+  return true;
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  phoneVerify: phoneVerify
 }
