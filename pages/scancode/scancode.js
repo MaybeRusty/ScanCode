@@ -10,12 +10,12 @@ Page({
     isUninvalid: false
   },
   onLoad: function () {
-    if (!app.globalData.loginStatus) {
-      //页面跳转相当于	
-      wx.navigateTo({
-        url: '../login/login',
-      })
-    }
+    // if (!app.globalData.loginStatus) {
+    //   //页面跳转相当于	
+    //   wx.navigateTo({
+    //     url: '../login/login',
+    //   })
+    // }
   },
   detailCode: function() {
     console.log(this.data.codeResult)

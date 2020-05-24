@@ -31,15 +31,14 @@ Page({
     refresh_top_hidden: true,
     refresh_buttom_hidden: true,
     load_more: true,
-    add_item: false
+    add_item: false,
+    toast_ctrl: {
+      enable: false,
+      succ: true,
+      err_msg: ""
+    }
   },
   onLoad: function () {
-    if (!app.globalData.loginStatus) {
-      //页面跳转相当于	
-      wx.navigateTo({
-        url: '../login/login',
-      })
-    }
   },
   onTabItemTap: function() {
     if (!app.globalData.loginStatus) {
@@ -75,14 +74,28 @@ Page({
         })
       }, 1000)
   },
+  set_item_value: function(e) {
+    console.log(e.detail.value)
+    var item = this.data.item
+    item.item_value = e.detail.value
+    this.setData({
+      item: item
+    })
+  },
   placeOrder: function() {
     var that = this
     that.setData({
       add_item: true
     })
   },
-  add_item_handle: function() {
+  add_item_handle: function(event) {
     var that = this
+    var cur_data = event.currentTarget.dataset.item
+    console.log(cur_data.item_value)
+    if (cur_data.item_value <= 0) {
+      this.win_alert(true, false, "无效的订单数量")
+      return
+    }
     var cur_orders = that.data.orders
     cur_orders.splice(5, 1)
     cur_orders.push(that.data.item)
@@ -95,5 +108,23 @@ Page({
     this.setData({
       add_item: false
     })
+  },
+  //操作反馈提示
+  win_alert: function(enable, succ, errmsg) {
+    var toast_ctrl = this.data.toast_ctrl
+    toast_ctrl.enable = enable
+    toast_ctrl.succ = succ
+    toast_ctrl.err_msg = errmsg
+    setTimeout(() => {
+      this.setData({
+        toast_ctrl: toast_ctrl
+      });
+      toast_ctrl.enable = false
+      setTimeout(() => {
+          this.setData({
+            toast_ctrl: toast_ctrl
+          });
+      }, 300);
+    }, 1000);
   }
 })

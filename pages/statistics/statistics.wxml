@@ -60,14 +60,22 @@
                     <view class="weui-label">订购门票</view>
                 </view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" value="{{item.item_value}}" placeholder="请输入数量" />
+                    <input class="weui-input" data-value="{{item.item_value}}" placeholder="请输入数量" bindinput="set_item_value" />
                 </view>
               </view>
             </view>
             <view class="weui-dialog__ft">
-                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="add_item_handle">订购</a>
+                <a class="weui-dialog__btn weui-dialog__btn_primary"  data-item="{{item}}" bindtap="add_item_handle">订购</a>
                 <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="add_item_close">取消</a>
             </view>
         </view>
-    </view>
+  </view>
+  <view class="fadeIn" wx:if="{{toast_ctrl.enable}}">
+		<view class="weui-mask_transparent"></view>
+		<view class="weui-toast">
+			<i class="weui-icon-success-no-circle weui-icon_toast" wx:if="{{toast_ctrl.succ}}"></i>
+			<i class="weui-icon-warn weui-icon_toast" wx:else></i>
+			<view class="weui-toast__content">{{toast_ctrl.err_msg}}</view>
+		</view>
+	</view>
 </view>

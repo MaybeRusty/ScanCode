@@ -5,12 +5,12 @@ Page({
     test: "这是我的test页面哦哦！！！"
   },
   onLoad: function () {
-    if (!app.globalData.loginStatus) {
-      //页面跳转相当于
-      wx.navigateTo({
-        url: '../login/login',
-      })
-    }
+    // if (!app.globalData.loginStatus) {
+    //   //页面跳转相当于
+    //   wx.navigateTo({
+    //     url: '../login/login',
+    //   })
+    // }
   },
   onTabItemTap: function() {
     if (!app.globalData.loginStatus) {
